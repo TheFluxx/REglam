@@ -1,31 +1,53 @@
-# 05 Final Checklist
+# 05 Final Checklist (GateResult)
 
-## Блок A. Артефакты
-- [x] Есть `README.md` с инструкцией локального запуска.
-- [x] Есть `docs/00_reglament_single_dev.md`.
-- [x] Есть `docs/01_spec_scope.md`.
-- [x] Есть `docs/02_known_gaps.md`.
-- [x] Есть `docs/03_review_log.md`.
-- [x] Есть `docs/04_decisions.md`.
-- [x] Есть `docs/05_final_checklist.md`.
+## Формат GateResult
+`gate_id, criteria, pass_fail, evidence_ref, owner, updated_at`
 
-## Блок B. Сайт
-- [x] Есть 4 обязательные секции (`Hero`, контент, форма/интерактив, футер).
-- [x] Реализован основной пользовательский сценарий.
-- [x] Реализован альтернативный пользовательский сценарий.
-- [x] Базовый адаптив для 360px+ и 1280px+.
-- [x] Базовые требования доступности соблюдены (семантика, фокус, `alt`).
-- [x] Нет критических ошибок консоли в основном сценарии (ручная проверка).
+## Gate A: Documentation Integrity
+- gate_id: `GATE-A`
+- criteria:
+  - есть `docs/00..09`;
+  - шаблоны `GapCardV2`, `ReviewIssueV2`, `DecisionRecordV2` применены;
+  - релизный цикл и риски задокументированы.
+- pass_fail: `PASS`
+- evidence_ref: `docs/00_reglament_single_dev.md`, `docs/06_quality_gates.md`, `docs/08_release_notes.md`
+- owner: `Author`
+- updated_at: `2026-02-20`
 
-## Блок C. Ревью и фиксация
-- [x] Незавершенности зафиксированы в формате `GAP-*`.
-- [x] Дефекты зафиксированы в таблице `Issue ID` формата.
-- [x] Для каждого `Major` есть решение или обоснованное принятие риска.
-- [ ] Нет открытых `Critical`.
-- [x] Любая правка post-freeze должна фиксироваться в `docs/04_decisions.md`.
+## Gate B: UX + A11y
+- gate_id: `GATE-B`
+- criteria:
+  - 2 сценария end-to-end;
+  - `happy/invalid/recovery` отражены в тест-матрице;
+  - нет открытых `Critical` по A11y.
+- pass_fail: `FAIL`
+- evidence_ref: `docs/07_test_matrix.md`, `docs/03_review_log.md` (`A11Y-001`)
+- owner: `Author`
+- updated_at: `2026-02-20`
 
-## Блок D. Итог
-- [ ] PASS
-- [x] FAIL (на доработку)
+## Gate C: Performance + Content
+- gate_id: `GATE-C`
+- criteria:
+  - нет критических ошибок консоли;
+  - нет тяжелых неиспользуемых ассетов;
+  - микрокопирайт согласован, отсутствуют `lorem/todo/tbd`.
+- pass_fail: `PASS`
+- evidence_ref: `docs/07_test_matrix.md`
+- owner: `Author`
+- updated_at: `2026-02-20`
 
-Причина текущего статуса: в `docs/03_review_log.md` есть открытый `Critical` (`A11Y-001`).
+## Gate D: Defects and Decisions
+- gate_id: `GATE-D`
+- criteria:
+  - `Critical/Open = 0`;
+  - `Major/Open = 0` или `Accepted with rationale + Expiry`;
+  - post-freeze изменения оформлены в `docs/04_decisions.md`.
+- pass_fail: `FAIL`
+- evidence_ref: `docs/03_review_log.md`, `docs/04_decisions.md`
+- owner: `Author`
+- updated_at: `2026-02-20`
+
+## Финальный статус
+- `PASS`: нет
+- `FAIL`: да
+- причина: открыт `A11Y-001` (Critical), что блокирует `GATE-B` и `GATE-D`.
