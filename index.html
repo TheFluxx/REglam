@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UI/UX Review Sandbox</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К контенту</a>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">Sandbox</a>
+      <button id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="menu">Меню</button>
+      <nav id="menu" class="menu" aria-label="Главная навигация">
+        <a href="#hero">Старт</a>
+        <a href="#features">Возможности</a>
+        <a href="#feedback">Обратная связь</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Локальный UI/UX стенд для ревью</h1>
+          <p>
+            Демонстрационный сайт с формализованным разбором ошибок и
+            незавершенных деталей.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#feedback">Начать сценарий</a>
+            <a class="btn btn-secondary" href="#features">Альтернативный путь</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Декоративная панель">
+          <h2>Статус итерации</h2>
+          <p>v01: черновик для обсуждения и фиксации замечаний.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Что проверяют участники</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>UI</h3>
+            <p>Сетка, типографика, отступы, контраст, состояние кнопок.</p>
+          </article>
+          <article class="card">
+            <h3>UX</h3>
+            <p>Понятность шагов, скорость прохождения сценариев, ошибки ввода.</p>
+          </article>
+          <article class="card">
+            <h3>A11y</h3>
+            <p>Фокус, семантика, `alt`, удобство с клавиатуры.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="section section-alt">
+      <div class="container form-wrap">
+        <div>
+          <h2>Мини-форма проверки</h2>
+          <p>Используйте форму для проверки интерактива и валидации.</p>
+        </div>
+        <form id="reviewForm" novalidate>
+          <label for="name">Имя</label>
+          <input id="name" name="name" autocomplete="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="severity">Критичность замечания</label>
+          <select id="severity" name="severity" required>
+            <option value="">Выберите</option>
+            <option value="Critical">Critical</option>
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+
+          <label for="comment">Комментарий</label>
+          <textarea id="comment" name="comment" rows="4" required></textarea>
+
+          <button class="btn btn-primary" type="submit">Отправить</button>
+          <p id="formStatus" class="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>UI/UX Review Sandbox · Локальный режим · Pass/Fail</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
