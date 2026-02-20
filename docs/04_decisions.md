@@ -68,3 +68,14 @@
 - impact: [влияние]
 - expiry: [версия/дата]
 - linked_ids: [Issue/GAP]
+
+DEC-005:
+  date: YYYY-MM-DD
+  decision_type: Fix
+  context: Исправление критического дефекта A11Y-001 после RC
+  options: Оставить как есть / исправить
+  choice: Исправить
+  rationale: Дефект блокирует финальную приемку
+  impact: Устранение нарушения A11y, возможность перехода к Final
+  expiry: Final
+  linked_ids: A11Y-001

@@ -20,7 +20,7 @@
   - 2 сценария end-to-end;
   - `happy/invalid/recovery` отражены в тест-матрице;
   - нет открытых `Critical` по A11y.
-- pass_fail: `FAIL`
+- pass_fail: `PASS`
 - evidence_ref: `docs/07_test_matrix.md`, `docs/03_review_log.md` (`A11Y-001`)
 - owner: `Author`
 - updated_at: `2026-02-20`
@@ -42,7 +42,7 @@
   - `Critical/Open = 0`;
   - `Major/Open = 0` или `Accepted with rationale + Expiry`;
   - post-freeze изменения оформлены в `docs/04_decisions.md`.
-- pass_fail: `FAIL`
+- pass_fail: `PASS`
 - evidence_ref: `docs/03_review_log.md`, `docs/04_decisions.md`
 - owner: `Author`
 - updated_at: `2026-02-20`
